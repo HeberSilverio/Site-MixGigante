@@ -1,16 +1,16 @@
 <?php get_header(); ?>   
     <div class="content-area">
         <main>
-            <section class="projects"></section>
-            <section class="slide"></section>
+            <section class="projects">Saiba Mais</section>
+            <section class="slide">Slide</section>
             <section class="aboutUs">
-                <aside class="sidebar"></aside>
-                <div class="about"></div>
+                <aside class="sidebar">Image</aside>
+                <div class="about">Quem Somos</div>
             </section>
-            <section class="galeria"></section>
-            <section class="depositions"></section>
-            <section class="blog"></section>
-            <section class="social-media"></section>
+            <section class="galeria">Últimos Projetos</section>
+            <section class="depositions">Depoimentos</section>
+            <section class="blog">Blog</section>
+            <section class="social-media">Siga-nos no Instagram - @mixgigante</section>
         </main>        
     </div>
 <?php get_footer(); ?>     
