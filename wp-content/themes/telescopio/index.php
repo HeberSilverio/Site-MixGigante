@@ -1,27 +1,73 @@
 <?php get_header(); ?>   
+
+<!-- <img class="img-fluid" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt=""/> -->
+
     <div class="content-area">
         <main>
-            <section class="intro">Saiba Mais
-                <!-- faixa no topo para menu social e search -->
-                <section class="top-bar">
-                    <div class="container">
-                        <div class="row">
-                            <div class="social-media-icons col-xl-9 col-sm-7 col-6">Ícones Sociais</div>
-                            <div class="search col-xl-3 col-sm-5 col-6 ">Pesquisa</div>                
-                        </div>
+            <section class="intro">
+                <div class="container">
+                    <div class="row">Saiba Mais</div>
+                </div>
+            </section>
+            <section class="slide">
+                <div class="container">
+                    <div class="row">Slide</div>
+                </div>
+            </section>
+            <section class="aboutUs">
+                <div class="container">
+                    <div class="row">
+                        <aside class="sidebar col-md-3">Image</aside>
+                        <div class="about col-md-6">Quem Somos</div>
+                        <aside class="sidebar col-md-3">Image</aside>
                     </div>
                     
-                </section>
+                </div>
             </section>
-            <section class="slide">Slide</section>
-            <section class="aboutUs">
-                <aside class="sidebar">Image</aside>
-                <div class="about">Quem Somos</div>
+            <section class="galeria">
+                <div class="container">
+                    <div class="row">Últimos Projetos
+
+                    </div>
+                </div>
             </section>
-            <section class="galeria">Últimos Projetos</section>
-            <section class="depositions">Depoimentos</section>
-            <section class="blog">Blog</section>
-            <section class="social-media">Siga-nos no Instagram - @mixgigante</section>
+            <section class="depositions">
+                <div class="container">
+                    <div class="row">Depoimentos</div>
+                </div>
+            </section>
+            <section class="blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="news">
+                            <?php 
+                            // Se houver algum post
+                                if( have_posts() ):
+                                    // Enquanto houver posts, mostre-os pra gente
+                                    while( have_posts() ): the_post();
+                            ?>
+
+                            <article>
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_post_thumbnail( 'thumbnail'); ?>
+                                <?php the_content(); ?>
+                            </article>
+
+                            <?php 
+                                endwhile;
+                            else:
+                            ?>
+                            <p>There's nothing yet to be displayed...</p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="social-media">
+                <div class="container">
+                    <div class="row">Siga-nos no Instagram - @mixgigante</div>
+                </div>
+            </section>
         </main>        
     </div>
 <?php get_footer(); ?>     
